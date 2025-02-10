@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #282d34;
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+a:hover{
+    color: rgb(80, 0, 80);
+}
+
+/*! Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #282d34;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7e7680;
+    border-radius: 15px;
+    border: 1px solid #282d34;
+}
+
+/*! HEADER */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 2rem;
+    background-color: #282d34;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    width: 100%; height: 60px;
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex; justify-content: space-between;
+    width: 1000px;
+    margin-left: 30px;
+}
+
+.navbar .links li:first-child {
+    margin-right: auto;
+}
+
+.right-links {
+    display: flex;
+    gap: 2rem;
+}
+
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: rgb(80, 0, 80); color: #fff;
+    padding: 0.5rem 1rem;
+    border: none; outline: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/*! DROPDOWN MENU */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0; width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.dropdown_menu.open{
+    height: 150px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*! BANNER */
+.wrapper{
+    width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 25px 30px rgb(10, 0, 10);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.banner{
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+    height: 480px;
+    
+}
+img{
+    width: 100%;
+}
+
+/*! FORM */
+
+/** Section1 Header*/
+.section1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    padding: 30px 15px;
+    margin-top: 20px;
+    background-color: #282d34;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    outline: .1rem solid #7e7680;
+    outline-offset: 0;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.section1 img {
+    width: 180px;
+    border-radius: 15px;
+    margin-right: 20px;
+    position: relative;
+    top: -5px;
+    z-index: 2;
+}
+
+.section1 h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.section1 .developer {
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.section1 .description1, 
+.section1 .description2, 
+.section1 .description3 {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.section1 .description1 i {
+    color: yellow;
+    margin-right: 10px;
+}
+
+.section1 .description2 i {
+    color: rgb(111, 0, 111);
+    margin-right: 10px;
+}
+
+.section1 .description3 i {
+    color: rgb(0, 194, 228);
+    margin-right: 10px;
+}
+
+/** Section2 SIDEBAR */
+.section2 {
+    width: 100%;
+    background-color: #282d34;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section2 .content {
+    display: flex;
+    gap: 20px;
+}
+
+.section2 .content .left,
+.section2 .content .right {
+    display: flex;
+    flex-direction: column;
+}
+
+.section2 .content .left {
+    flex: 1;
+}
+
+.section2 .content .right {
+    flex: 2;
+    gap: 20px;
+}
+
+.section2 .content .card {
+    background-color: #282d34;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 1px solid #7e7680;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.section2 .content .left h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.section2 .content .left ol {
+    counter-reset: list-counter; 
+    padding-left: 20px; 
+    list-style: none;
+}
+
+.section2 .content .left ol li {
+    counter-increment: list-counter;
+    margin-bottom: 10px; 
+    font-size: 15px;
+    color: #c2c1c2;
+    position: relative; 
+}
+
+.section2 .content .left ol li::before {
+    content: counter(list-counter) ". "; 
+    position: absolute; 
+    left: -30px; 
+    font-weight: bold;
+}
+
+/** Data Akun */
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+.title1{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+.data{
+    display: flex;
+    font-size: 12px;
+}
+input{
+    border-radius: 20px;
+    height: 25px;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    background-color: #ccc;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.card:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.id, .server {
+    margin-left: 10px;
+    width: 50%;
+}
+
+.desc {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #fff;
+    font-style: italic;
+}
+
+/** Pilih Pembelian */
+.container{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: #282d34;
+    font-weight: bold;
+}
+.title2{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+.container .product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap:1rem;
+}
+
+.container .product-container .product{
+    text-align: center;
+    padding: 1rem 2rem;
+    background: #ccc;
+    box-shadow: 0 .5rem .1rem rgb(0, 0, 0, .1);
+    outline: .1rem solid rgba(0, 0, 0, 0.15);
+    outline-offset: -1.rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.container .product-container .product img{
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+}
+.container .product-container .product h4{
+    padding: .2rem 0;
+}
+.container .product-container .product.active-product {
+    outline: .2rem solid rgb(111, 0, 111); 
+    outline-offset: 0;
+    background-color: #f7e0f7; 
+}
+
+.container .product-container .product.active-product img {
+    transform: scale(1.1);
+}
+
+/** Pilih Pembayaran */
+.container2{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.title3{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+.container2 .payment-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.container2 .payment-container .payment{
+    text-align: left;
+    padding: 1rem 2rem;
+    background: #ccc;
+    box-shadow: 0 .5rem .1rem rgb(0, 0, 0, .1);
+    outline: .1rem solid rgba(0, 0, 0, 0.15);
+    outline-offset: -1.rem;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+}
+.container2 .payment-container .payment img{
+    height:100%;
+    width: 50%;
+}
+
+.container2 .payment-container .payment.active-payment {
+    outline: .2rem solid rgb(111, 0, 111); 
+    outline-offset: 0;
+    background-color: #f7e0f7; 
+}
+
+.container2 .payment-container .payment.active-payment img {
+    transform: scale(0.95);
+}
+
+/** KONFIRMASI PEMBAYARAN */
+.title4{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.Pembayaran {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.desc2 {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #fff;
+    font-style: italic;
+}
+button{
+    width: 100%;
+    height: 5%;
+    border-radius: 10px;
+    background-color: rgb(111, 0, 111);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+/** RESPONSIVE DESIGN */
+@media(max-width: 1023px){
+    .navbar .beranda,
+    .navbar .id,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .section1 img {
+        width: 120px; 
+        top: 0; 
+        margin-bottom: 15px; 
+    }
+
+    .section1 h2 {
+        font-size: 20px;
+    }
+
+    .section1 .developer {
+        font-size: 16px;
+    }
+
+    .section1 .description1 {
+        font-size: 14px;
+        padding-left: 0;
+    }
+    .section1 .description2 {
+        font-size: 14px;
+        padding-left: 0;
+    }
+    .section1 .description3 {
+        font-size: 14px;
+        padding-left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .section1 img {
+        width: 100px;
+    }
+
+    .section1 h2 {
+        font-size: 18px;
+    }
+
+    .section1 .developer {
+        font-size: 14px;
+    }
+
+    .section1 .description1 {
+        font-size: 12px;
+    }
+}

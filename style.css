@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #282d34;
+    padding-top: 60px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+a:hover{
+    color: rgb(80, 0, 80);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #282d34;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7e7680;
+    border-radius: 15px;
+    border: 1px solid #282d34;
+}
+
+/* HEADER */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 2rem;
+    background-color: #282d34;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+    width: 100%; height: 60px;
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex; justify-content: space-between;
+    width: 1000px;
+    margin-left: 30px;
+}
+
+.navbar .links li:first-child {
+    margin-right: auto;
+}
+
+.right-links {
+    display: flex;
+    gap: 2rem;
+}
+
+
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: rgb(80, 0, 80); color: #fff;
+    padding: 0.5rem 1rem;
+    border: none; outline: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0; width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.dropdown_menu.open{
+    height: 150px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* BANNER */
+.wrapper{
+    width: 1000px;
+    margin: auto;
+    transform: translateX(-50%, -50%);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 10px 25px 30px rgb(10, 0, 10);
+    margin-top: 20px;
+}
+
+.banner{
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+img{
+    width: 100%;
+}
+
+/* PRODUCT */
+.container{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+.container .title{
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.container .product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap:2rem;
+}
+
+.container .product-container .product{
+    text-align: center;
+    padding: .4rem 2rem;
+    background: #282d34;
+    box-shadow: 0 .5rem .1rem rgb(0, 0, 0, .1);
+    outline: .1rem solid rgba(0, 0, 0, 0.15);
+    outline-offset: -1.rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.container .product-container .product:hover{
+    outline: .2rem solid #7e7680;
+    outline-offset:0;
+}
+
+.container .product-container .product img{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
+.container .product-container .product:hover img{
+    transform: scale(.9);
+}
+
+.container .product-container .product h4{
+    padding: .5rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.container .product-container .product:hover h4{
+    color: rgb(80, 0, 80);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1023px){
+    .navbar .beranda,
+    .navbar .id,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .container .title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* .container .product-container {
+        grid-template-columns: 1fr;
+    } */
+
+    .container .product-container .product {
+        padding: .4rem;
+        border-radius: 10px;
+    }
+
+    .container .product-container .product img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .container .product-container .product h4 {
+        font-size: 1rem;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        padding: 1rem 1.5rem;
+    }
+
+    .container .title {
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .container .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
+
+    .container .product-container .product {
+        padding: .4rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .container .product-container .product img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .container .product-container .product h4 {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .container .title {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .container .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
+
+
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    15%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    45%{
+        transform: translateX(-100%);
+    }
+    60%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    90%{
+        transform: translateX(0); 
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .wrapper {
+        width: 90%;
+    }
+}
